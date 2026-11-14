@@ -195,6 +195,7 @@
             margin-right: 8px;
         }
         .submit-btn {
+            display: block;
             width: 100%;
             padding: 14px;
             background: #ff7a3d;
@@ -206,9 +207,17 @@
             cursor: pointer;
             margin-top: 8px;
             transition: background 0.3s;
+            text-align: center;
+            text-decoration: none;
         }
         .submit-btn:hover {
             background: #ff6a2d;
+        }
+        .form-note {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
         }
 
         /* 底部微信咨询 */
@@ -376,68 +385,12 @@
             </div>
         </div>
 
-        <!-- 留资表单 -->
+        <!-- 留资入口：飞书表单真实收集并写入客户台账 -->
         <div class="form-section">
             <h2>有意向？留个联系方式</h2>
-            <p class="form-desc">我们会根据您的需求，1对1给您出方案和报价</p>
-
-            <div class="form-group">
-                <label>您的称呼</label>
-                <input type="text" placeholder="比如：王老板 / 李姐" required>
-            </div>
-
-            <div class="form-group">
-                <label>您的微信或电话</label>
-                <input type="text" placeholder="方便我们联系您" required>
-            </div>
-
-            <div class="form-group">
-                <label>您是什么行业的？</label>
-                <select required>
-                    <option value="">请选择</option>
-                    <option>餐饮/咖啡店/奶茶店</option>
-                    <option>美容美发/美甲</option>
-                    <option>健身/瑜伽/舞蹈</option>
-                    <option>零售/服装店/超市</option>
-                    <option>教育/培训/托管</option>
-                    <option>其他</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>您想做什么服务？（可多选）</label>
-                <div class="checkbox-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" name="service" value="海报">
-                        <span>海报设计</span>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" name="service" value="视频">
-                        <span>短视频/宣传片</span>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" name="service" value="引流">
-                        <span>引流方案</span>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" name="service" value="小程序">
-                        <span>小程序定制</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>您的预算大概是？</label>
-                <select required>
-                    <option value="">请选择</option>
-                    <option>500元以内（先试试水）</option>
-                    <option>500-2000元</option>
-                    <option>2000-5000元</option>
-                    <option>5000元以上</option>
-                </select>
-            </div>
-
-            <button class="submit-btn" onclick="submitForm()">提交需求</button>
+            <p class="form-desc">填写约1分钟，我们会根据您的需求，1对1给出方案和报价</p>
+            <a class="submit-btn" href="https://my.feishu.cn/share/base/shrcnQtfa6oVhySL7j7GDjzbmOl" target="_blank" rel="noopener noreferrer">填写需求登记表</a>
+            <p class="form-note">无需登录 · 7个必要问题 · 信息仅用于本次需求沟通</p>
         </div>
 
         <!-- 底部微信咨询 -->
@@ -461,21 +414,6 @@
             });
         });
 
-        // 多选框选中效果
-        document.querySelectorAll('.checkbox-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const checkbox = item.querySelector('input');
-                checkbox.checked = !checkbox.checked;
-                item.classList.toggle('checked', checkbox.checked);
-            });
-        });
-
-        // 提交表单
-        function submitForm() {
-            alert('需求已提交！我们会尽快联系您～');
-            // 这里后续可以接表单收集工具，比如腾讯文档、金山表单等
-        }
     </script>
 </body>
 </html>
-
